@@ -1,0 +1,259 @@
+<div class="panel with-nav-tabs panel-primary cat-panel">
+    <div class="panel-heading">
+        <ul class="nav nav-tabs">
+            <li>
+                <a href="#cat-a" id="tab-a" class="active show" data-toggle="tab">Sources</a>
+            </li>
+            <li>
+                <a href="#cat-b" id="tab-b" data-toggle="tab">Targets</a>
+            </li>
+            <li>
+                <a href="#cat-c" id="tab-c" data-toggle="tab">Transforms</a>
+            </li>
+        </ul>
+    </div>
+    <div class="panel-body cat-panel-body">
+        <div class="tab-content">
+            <div class="tab-pane fade in active show" id="cat-a">
+                <form id="cata-form">
+                    <div class="form-inline">
+                        <div class="form-group">
+                            // Source
+                            <div>
+                                <label for="">Name</label>
+                                <input type="text" class="form-control form-control-sm" id="cata-text" placeholder="Enter Object Name">
+                            </div>
+                        </div>
+                        <div class="equal-span">
+                            <span> = </span>
+                        </div>
+                        <div class="form-group">
+                            <div>
+                                <label for="">Type</label>
+                                <select name="type" id="type-select-a" class="form-control form-control-sm">
+                                    <option value="0"></option>
+                                    {% for data in sources_json_data %}
+                                        <option value="{{ data.typename }}">{{ data.typename }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div>
+                                <label for="">Code</label>
+                                <textarea class="form-control form-control-sm" name="code" id="code-textarea-a" cols="100" rows="10" value=""></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-outline-warning btn-sm code-button" type="button">Preview</button>
+                        <button class="btn btn-outline-danger btn-sm code-button" type="reset">Close</button>
+                        <button class="btn btn-outline-success btn-sm code-button" id="cata_save_btn" type="button" data-toggle="modal" data-target="#suresaveModal">Save</button>
+                    </div>
+                </form>
+                <!-- sure Modal -->
+                <div class="modal fade" id="suresaveModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Save Object</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            Add "<span id="cata_name"></span>"
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" onclick="cata_txt()">Yes</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                <!-- success modal -->
+                <div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">Saved!</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <!-- <div class="modal-body">
+                            Successfull ! 
+                        </div> -->
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">OK</button>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-pane fade" id="cat-b">
+                <form id="catb-form">
+                    <div class="form-inline">
+                        <div class="form-group">
+                            // Target
+                            <div>
+                                <label for="">Name</label>
+                                <input type="text" class="form-control form-control-sm" id="catb-text" placeholder="Enter Object Name">
+                            </div>
+                        </div>
+                        <div class="equal-span">
+                            <span> = </span>
+                        </div>
+                        <div class="form-group">
+                            <div>
+                                <label for="">Type</label>
+                                <select name="type" id="type-select-b" class="form-control form-control-sm">
+                                    <option value="0"></option>
+                                    {% for data in target_json_data %}
+                                        <option value="{{ data.typename }}">{{ data.typename }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div>
+                                <label for="">Code</label>
+                                <textarea class="form-control form-control-sm" name="code" id="code-textarea-b" cols="100" rows="10"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-outline-warning btn-sm code-button" type="button">Preview</button>
+                        <button class="btn btn-outline-danger btn-sm code-button" type="reset">Close</button>
+                        <button class="btn btn-outline-success btn-sm code-button" id="catb_save_btn" type="button" data-toggle="modal" data-target="#suresaveModal-b">Save</button>
+                    </div>
+                </form>
+                <!-- sure Modal -->
+                <div class="modal fade" id="suresaveModal-b" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Save Object</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                                To Add "<span id="catb_name"></span>"
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" onclick="catb_txt()">Yes</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                <!-- success modal -->
+                <div class="modal fade" id="successModal-b" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">Saved!</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <!-- <div class="modal-body">
+                            Successfull ! 
+                        </div> -->
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">OK</button>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-pane fade" id="cat-c">
+                <form>
+                    <div class="form-inline">
+                        <div class="form-group">
+                            // Transform
+                            <div>
+                                <label for="">Name</label>
+                                <input type="text" class="form-control form-control-sm" id="catc-text" placeholder="Enter Object Name">
+                            </div>
+                        </div>
+                        <div class="equal-span">
+                            <span> = </span>
+                        </div>
+                        <div class="form-group">
+                            <div>
+                                <label for="">Type</label>
+                                <select name="type" id="type-select-c" class="form-control form-control-sm">
+                                    <option value="0"></option>
+                                    {% for data in transform_json_data %}
+                                        <option value="{{ data.typename }}">{{ data.typename }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div>
+                                <label for="">TypeName</label>
+                                <select name="type" id="type-multi" class="form-control form-control-sm" multiple>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div>
+                                <label for="">Code</label>
+                                <textarea class="form-control form-control-sm" name="code" id="code-textarea-c" cols="100" rows="10"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-outline-warning btn-sm code-button" type="button">Preview</button>
+                        <button class="btn btn-outline-danger btn-sm code-button" type="reset">Close</button>
+                        <button class="btn btn-outline-success btn-sm code-button" type="button" onclick="catc_addcode()">Add</button>
+                        <!--<button class="btn btn-outline-success btn-sm code-button" type="button" data-toggle="modal" data-target="#suresaveModal-c">Add</button>-->
+                    </div>
+                </form>
+                <!-- sure Modal -->
+                <div class="modal fade" id="suresaveModal-c" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Add code</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            Add?
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" onclick="catc_addcode()">Add</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Exist Modal -->
+            <div class="modal fade" id="existModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Sorry! Already Exist objectname</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">OK</button>
+                    </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

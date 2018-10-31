@@ -1,0 +1,130 @@
+.panel.with-nav-tabs .panel-heading{
+    padding: 5px 5px 0 5px;
+    color: #fff;
+    background-color: #428bca;
+    border-color: #428bca;
+    border-bottom: none;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+.panel.with-nav-tabs .nav-tabs{
+	border-bottom: none;
+}
+/* .panel.with-nav-tabs .nav-justified{
+	margin-bottom: -1px;
+} */
+.with-nav-tabs.panel-primary .nav-tabs > li > a{
+    color: #fff;
+    text-decoration: none;
+    color: #fff;
+    background-color:transparent;
+    border-color: transparent;
+    margin-right: 2px;
+    line-height: 1.42857143;
+    border: 1px solid transparent;
+    border-radius: 4px 4px 0 0;
+    padding:6px; 
+}
+
+.with-nav-tabs.panel-primary .nav-tabs > li > a:hover{
+    color: #fff;
+    background-color:#3071a9;
+}
+.with-nav-tabs.panel-primary .nav-tabs > li > a.active.show {
+    background-color:white;
+    color:#3071a9;
+}
+.with-nav-tabs.panel-primary .nav-tabs > li{
+    margin:5px 2px;
+}
+.with-nav-tabs.panel-primary .nav-tabs > li.active > a,
+.with-nav-tabs.panel-primary .nav-tabs > li.active > a:hover,
+.with-nav-tabs.panel-primary .nav-tabs > li.active > a:focus {
+	color: #428bca;
+	background-color: #fff;
+	border-color: #428bca;
+	border-bottom-color: transparent;
+}
+.panel-primary {
+    border:solid 1px #428bca;
+    border-radius: 3px;
+}
+.panel-primary .panel-body{
+    padding:10px;
+}
+
+.navigator-panel-body {
+    height: 600px;
+}
+
+.code-panel-body {
+    height: 230px;
+}
+
+.cat-panel-body {
+    height: 320px;
+}
+
+.output-panel-body {
+    height: 150px;
+}
+
+.navigator-panel, .code-panel, .cat-panel {
+    margin-bottom: 5px;
+}
+
+.code-button {
+    float: right;
+    margin-left: 10px;
+}
+
+/* cat-a */
+#cat-a > form > div > div {
+    margin-left: 30px;
+}
+#cat-a > form {
+    float: right;
+}
+#cat-a > form > div > button {
+    margin-top: 20px;
+}
+.equal-span {
+    margin-top: 20px;
+}
+
+/* cat-b */
+#cat-b > form > div > div {
+    margin-left: 30px;
+}
+#cat-b > form {
+    float: right;
+}
+#cat-b > form > div > button {
+    margin-top: 20px;
+}
+.equal-span {
+    margin-top: 20px;
+}
+
+/* cat-c */
+#cat-c > form > div > div {
+    margin-left: 30px;
+}
+#cat-c > form {
+    float: right;
+}
+#cat-c > form > div > button {
+    margin-top: 20px;
+}
+.equal-span {
+    margin-top: 20px;
+}
+#type-multi {
+    width: 100px; 
+}
+.code-button{
+    margin-top:20px;
+}
+.code-li{
+    list-style-type: none;
+}

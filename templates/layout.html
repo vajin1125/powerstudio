@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>PowerStudio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.3.5/themes/default/style.min.css">
+    
+</head>
+<body>
+    <div class="container-fluid">
+        <div>
+            {% include "includes/_topbanner.html" %}
+        </div>
+        <div>
+            {% include "includes/_navbar.html" %}
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-sm-3">
+                {% include "navigator.html" %}
+            </div>
+            <div class="col-sm-9" style="padding:0;">
+                <div class="col-sm-12">
+                    <span id="working_now"></span>
+                    {% include "maintop.html" %}
+                </div>
+                <div class="col-sm-12">
+                    {% include "mainmiddle.html" %}
+                </div>
+                <div class="col-sm-12">
+                    {% include "mainbottom.html" %}
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js"></script>
+    <script src="{{ url_for('static', filename='js/jstree.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/new-tree.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/new-main.js') }}"></script>
+</body>
+</html>

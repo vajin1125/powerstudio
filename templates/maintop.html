@@ -1,0 +1,58 @@
+<div class="panel with-nav-tabs panel-primary code-panel">
+    <div class="panel-heading">
+        <ul class="nav nav-tabs">
+        <li><a href="#code" class="active show" data-toggle="tab">Mapper</a></li>
+        <li><a href="#layout" data-toggle="tab">Layout</a></li>               
+        </ul>
+    </div>
+    
+    <div class="panel-body code-panel-body">
+        <div class="tab-content">
+            <div class="tab-pane fade in active show" id="code">
+                <!-- <textarea class="form-control form-control-sm" name="codetextarea" id="code-textarea" cols="100" rows="7"></textarea> -->
+                <ul id="code-ul">
+                </ul>
+                <button type="reset" name="close" class="btn btn-outline-danger btn-sm code-button">Close</button>
+                <button type="button" name="save" class="btn btn-outline-success btn-sm code-button" id="codeset_save_btn" data-toggle="modal" data-target="#codesetModal">Save</button>
+                <!-- sure Modal -->
+                <div class="modal fade" id="codesetModal" tabindex="-1" role="dialog" aria-labelledby="codesetModal" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="codesetModal">Save CodeSet</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            Save "<span id="codeset_name"></span>"
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" onclick="codeset_txt()">Yes</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                <!-- success modal -->
+                <div class="modal fade" id="codeset-successModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">Saved</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">OK</button>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-pane fade" id="layout">// Layout part</div>
+        </div>
+    </div>
+</div>
